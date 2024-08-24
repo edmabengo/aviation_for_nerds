@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -125,5 +126,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Media files (user-uploaded content like images)
 MEDIA_URL = '/media/'  # L'URL accessible pour les fichiers media
 MEDIA_ROOT = BASE_DIR / 'media'  # Le répertoire où les fichiers media seront stockés
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
