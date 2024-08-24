@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<head>
+    <title>All Articles - Aviation for Nerds</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+{% block content %}
+<div class="container mt-5">
+    <a href="/" class="btn btn-primary mb-4">Back to Home</a>
+    <h2 class="text-center">All Articles</h2>
+    <ul class="list-group mt-4">
+        {% for post in posts %}
+            <li class="list-group-item my-2">
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.content|truncatewords:30 }}</p>
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

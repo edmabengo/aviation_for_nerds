@@ -1,0 +1,192 @@
+body {
+    background-color: #cccccc; /* Gris très clair qui tend vers le blanc */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-image: url("{% static 'images/background.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-fullscreen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    padding: 20px;
+}
+
+.intro-text {
+    position: absolute;
+    top: 60px;
+    left: 150px;
+    right: 200px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: bold;
+    z-index: 10;
+    padding: 0;
+}
+#intro::after {
+    content: "|";
+    animation: blink 0.7s infinite step-start;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+.parallax {
+    background-image: url("{% static 'images/background.jpg' %}");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fun-facts {
+    background-color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fun-facts h2 {
+    color: #ffffff;
+    background-color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.fun-facts p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+.articles-section {
+    background-color: #292929;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.articles-section h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+
+.articles-section p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+}
+
+.articles-section .btn-secondary {
+    background-color: #ff9800;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.articles-section .btn-secondary:hover {
+    background-color: #f57c00;
+}
+/* CSS pour styliser les icônes */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.social-links a {
+    color: #ff9800;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px; /* Taille des icônes */
+}
+
+.social-links a:hover {
+    color: #fff; /* Change la couleur des icônes au survol */
+}
+/* Styles pour la section "Posts" */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+}
+
+.card-text {
+    font-family: 'Arial', sans-serif;
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #ff9800;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+}
+
+.container h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
