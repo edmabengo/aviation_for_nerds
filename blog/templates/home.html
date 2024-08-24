@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviation for Nerds - Blog</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>Aviation for Nerds - Blog</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-         <style>
-          /* CSS pour styliser les icônes */
+
+
+    <style>
+
+        /* CSS pour styliser les icônes */
         .footer {
             background-color: #333;
             color: #fff;
@@ -42,106 +43,97 @@
         .social-links a:hover {
             color: #fff; /* Change la couleur des icônes au survol */
         }
+
+        /* Positionnement de la section "Did You Know?" sur l'image */
+        .fun-facts {
+            position: absolute;
+            top: 80%; /* Ajuste ce pourcentage pour déplacer la section plus ou moins haut */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff; /* Texte blanc pour être visible sur l'image */
+            background-color: rgba(0, 0, 0, 0.5); /* Fond transparent noir pour contraste */
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center; /* Centre le texte à l'intérieur de la boîte */
+        }
+
+        .fun-facts h2 {
+            color: #fff; /* Couleur du titre en blanc */
+        }
+
+        .fun-facts p {
+            font-size: 16px;
+            color: #fff; /* Couleur du texte en blanc */
+        }
+
+        /* Trois barres pour le menu */
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-toggle span {
+            background-color: #333;
+            height: 4px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Effet de survol */
+        .menu-toggle:hover span {
+            background-color: #ff9800;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace; /* Police nerdy */
+        }
+
+        .dropdown-menu li {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-menu li::before {
+            content: attr(data-prefix);
+            margin-right: 8px;
+            color: #ff9800; /* Couleur pour les chiffres romains */
+            flex-shrink: 0; /* Empêche le préfixe de se réduire */
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            flex-grow: 1; /* Permet au texte de remplir l'espace restant */
+        }
+
+        .dropdown-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Affiche le menu lorsque la classe open est activée */
+        .dropdown-menu.open {
+            display: block;
+        }
     </style>
-</head>
-
-    <style>
-    /* Positionnement de la section "Did You Know?" sur l'image */
-    .fun-facts {
-        position: absolute;
-        top: 80%; /* Ajuste ce pourcentage pour déplacer la section plus ou moins haut */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Courier New', Courier, monospace;
-        color: #fff; /* Texte blanc pour être visible sur l'image */
-        background-color: rgba(0, 0, 0, 0.5); /* Fond transparent noir pour contraste */
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center; /* Centre le texte à l'intérieur de la boîte */
-    }
-
-    .fun-facts h2 {
-        color: #fff; /* Couleur du titre en blanc */
-    }
-
-    .fun-facts p {
-        font-size: 16px;
-        color: #fff; /* Couleur du texte en blanc */
-    }
-</style>
-
-</head>
-
-
-    <style>
-    /* Trois barres pour le menu */
-    .menu-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        width: 30px;
-        height: 22px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .menu-toggle span {
-        background-color: #333;
-        height: 4px;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    /* Effet de survol */
-    .menu-toggle:hover span {
-        background-color: #ff9800;
-    }
-
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        list-style: none;
-        font-family: 'Courier New', Courier, monospace; /* Police nerdy */
-    }
-
-    .dropdown-menu li {
-        display: flex;
-        align-items: center;
-    }
-
-    .dropdown-menu li::before {
-        content: attr(data-prefix);
-        margin-right: 8px;
-        color: #ff9800; /* Couleur pour les chiffres romains */
-        flex-shrink: 0; /* Empêche le préfixe de se réduire */
-    }
-
-    .dropdown-menu a {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        margin: 5px 0;
-        flex-grow: 1; /* Permet au texte de remplir l'espace restant */
-    }
-
-    .dropdown-menu a:hover {
-        text-decoration: underline;
-    }
-
-    /* Affiche le menu lorsque la classe open est activée */
-    .dropdown-menu.open {
-        display: block;
-    }
-</style>
-
 </head>
 
 <body>
@@ -173,43 +165,44 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const texts = [
-                "Hi nerds! My name is Edgar and I like everything that flies... Here, I share my passion for flying and aviation with you all :)",
-                "I also like science and learning new things!",
-                "Oh, before I forget, I also like sunsets!",
-                "Have fun! :)",
-            ];
-            let i = 0;
-            let textIndex = 0;
-            const speed = 40;
-            const eraseSpeed = 20;
-            const delayBetweenTexts = 1500;
+    document.addEventListener("DOMContentLoaded", function() {
+        const texts = [
+            "Hi nerds! My name is Edgar and I like everything that flies... Here, I share my passion for flying and aviation with you all :)",
+            "I also like science and learning new things!",
+            "Oh, before I forget, I also like sunsets!",
+            "Have fun! :)",
+        ];
+        let i = 0;
+        let textIndex = 0;
+        const speed = 40;  // Adjusted speed for displaying text
+        const eraseSpeed = 20;  // Speed for erasing text
+        const delayBetweenTexts = 1000;  // Delay between texts
 
-            function typeWriter() {
-                if (i < texts[textIndex].length) {
-                    document.getElementById("intro").innerHTML += texts[textIndex].charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } else {
-                    setTimeout(eraseText, delayBetweenTexts);
-                }
+        function typeWriter() {
+            if (i < texts[textIndex].length) {
+                document.getElementById("intro").innerHTML += texts[textIndex].charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(eraseText, delayBetweenTexts);
             }
+        }
 
-            function eraseText() {
-                if (i >= 0) {
-                    const currentText = texts[textIndex].substring(0, i);
-                    document.getElementById("intro").innerHTML = currentText;
-                    i--;
-                    setTimeout(eraseText, eraseSpeed);
-                } else {
-                    textIndex = (textIndex + 1) % texts.length;
-                    i = 0;
-                    setTimeout(typeWriter, speed);
-                }
+        function eraseText() {
+            if (i >= 0) {
+                const currentText = texts[textIndex].substring(0, i);
+                document.getElementById("intro").innerHTML = currentText;
+                i--;
+                setTimeout(eraseText, eraseSpeed);
+            } else {
+                textIndex = (textIndex + 1) % texts.length;
+                i = 0;
+                setTimeout(typeWriter, speed);
             }
+        }
 
-            typeWriter();
+        typeWriter();
+
 
             const facts = [
                 "The fastest manned aircraft is the North American X-15.",
@@ -228,22 +221,19 @@
             });
         });
     </script>
-</body>
-<body>
-    <!-- Autres sections de la page -->
 
     <!-- Le footer doit être ajouté ici, juste avant la balise </body> -->
     <footer class="footer">
-    <div class="container text-center">
-        <h4>Links</h4>
-        <p>Data Ports to My Networks:</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/edgaraviation/" target="_blank"><i class="fab fa-instagram"></i></a> |
-            <a href="https://www.linkedin.com/in/edgar-mabengo-9929411a2/" target="_blank"><i class="fab fa-linkedin"></i></a> |
-            <a href="mailto:mabengoedgar@gmail.com"><i class="fas fa-envelope"></i></a>
+        <div class="container text-center">
+            <h4>Links</h4>
+            <p>Data Ports to My Networks:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/edgaraviation/" target="_blank"><i class="fab fa-instagram"></i></a> |
+                <a href="https://www.linkedin.com/in//edgar-mabengo-9929411a2/" target="_blank"><i class="fab fa-linkedin"></i></a> |
+                <a href="mailto:mabengoedgar@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
 
