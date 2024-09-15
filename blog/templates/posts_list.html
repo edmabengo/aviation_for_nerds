@@ -7,8 +7,73 @@
     <title>Posts - Aviation for Nerds</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-     <style>
-        /* Styles pour la section "Posts" */
+    <style>
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .menu-toggle span {
+            background-color: #333;
+            height: 4px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover span {
+            background-color: #ff9800;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-menu li::before {
+            content: attr(data-prefix);
+            margin-right: 8px;
+            color: #ff9800;
+            flex-shrink: 0;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            flex-grow: 1;
+        }
+
+        .dropdown-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-menu.open {
+            display: block;
+        }
+
         .card {
             border: none;
             border-radius: 10px;
@@ -47,29 +112,69 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
+        footer {
+            padding: 10px 0;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-top: 20px;
+        }
     </style>
 </head>
+
 <body>
+    <!-- Three-bar menu toggle -->
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu">
+        <li data-prefix="I."><a href="/">Home</a></li>
+        <li data-prefix="II."><a href="/nerdy-challenges">The Lab</a></li>
+    </ul>
+
     <div class="container mt-5">
-    <h1 class="text-center mb-5">Latest Posts</h1>
-    <div class="row">
-        {% for post in posts %}
-            <div class="col-md-6">
-                <div class="card mb-4 shadow-sm">
-                    <img src="{% static 'images/sample.jpg' %}" class="card-img-top" alt="{{ post.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.content|truncatewords:30 }}</p>
-                        <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
+        <h1 class="text-center mb-5">Latest Posts</h1>
+
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                            {% if post.is_published %}
+                                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
+                            {% else %}
+                                <p class="text-warning">This article will be available on {{ post.publish_date|date:"F j, Y" }}.</p>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% empty %}
-            <p>No posts available yet.</p>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
 
+            menuToggle.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('open');
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Inspired by Great Expectations :)</p>
+        <p>Edgar 2024</p>
+    </footer>
 </body>
 </html>

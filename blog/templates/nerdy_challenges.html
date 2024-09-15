@@ -1,12 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nerdy Challenges - Aviation for Nerds</title>
+    <title>The Lab - Aviation for Nerds</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-toggle span {
+            background-color: #333;
+            height: 4px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover span {
+            background-color: #ff9800;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            list-style: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .dropdown-menu li {
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-menu li::before {
+            content: attr(data-prefix);
+            margin-right: 8px;
+            color: #ff9800;
+            flex-shrink: 0;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            flex-grow: 1;
+        }
+
+        .dropdown-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-menu.open {
+            display: block;
+        }
+
+        .intro-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 75vh;
+            background: url('{% static "images/southintro.JPEG" %}') no-repeat center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .content-section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            font-family: 'Courier New', monospace;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            padding: 10px 0;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Nerdy Challenges</h1>
-    <p>This is where all the nerdy challenges will be displayed.</p>
+    <!-- Menu Toggle Button -->
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu">
+        <li data-prefix="I."><a href="/">Home</a></li>
+        <li data-prefix="II."><a href="/posts">Posts</a></li>
+    </ul>
+
+    <!-- Introduction Section with Background Image -->
+    <section class="intro-section">
+        <!-- Empty section just for the background image -->
+    </section>
+
+    <!-- Content Section with Intro Text and Project Descriptions -->
+    <section class="content-section">
+        <p>Hi there, I am an Industrial Engineering Student focusing on Aviation and Aerospace in general. I am passionate about the science behind flight and try to apply scientific principles to solve problems. In short, the basic ideas are: How do we optimize the current aviation ecosystem to make it better both environmentally and in terms of safety. Currently, I am:</p>
+        <p><strong>Exploring Sustainable Aviation Fuels (SAF)</strong> - Exploring SAF and their impact on reducing carbon emissions and enhancing efficiency. I am investigating various SAF production technologies using machine learning techniques to predict the properties of future SAFs, aiming to create more sustainable, high-performance fuels for the next generation of aviation. If you would like to learn more about the topic, please feel free to reach out :)</p>
+        <p><strong>Aviation Growth in Africa</strong> - Another exciting project I'm involved in focuses on supporting aviation growth in Africa, particularly in the DRC and South Africa. Together with some young African pilots and aviation enthusiasts, we are building a platform that provides other young aviation enthusiasts with access to essential tools and resources. This initiative includes forming partnerships with foreign and local NGOs and philanthropic actors to support a better environment for aspiring young aviators in the region.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Inspired by Great Expectations :)</p>
+        <p>Edgar 2024</p>
+    </footer>
+
+    <script>
+        // Toggle the dropdown menu visibility
+        const menuToggle = document.querySelector('.menu-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        menuToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
