@@ -1,2 +1,3 @@
-web: gunicorn aviation_for_nerds_edgar.wsgi --log-file -
+web: gunicorn aviation_for_nerds.wsgi --log-file -
+
 
