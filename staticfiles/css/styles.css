@@ -187,6 +187,16 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+@media (max-width: 768px) {
+    .intro-text, .container {
+        width: 90%; /* Réduire la largeur pour les petits écrans */
+        font-size: 1rem; /* Ajuster la taille de la police */
+    }
+    img {
+        width: 100%; /* Assurez-vous que les images ne débordent pas */
+        height: auto; /* Conserver les proportions des images */
+    }
+}
 
 
 
