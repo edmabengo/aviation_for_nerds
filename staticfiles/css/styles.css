@@ -24,6 +24,49 @@ img {
     display: block;
 }
 
+/* Rendre les textes plus petits sur mobile */
+.intro-text h2 {
+    font-size: 1.8rem;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .aviation-title {
+        font-size: 2rem;
+    }
+
+    .intro-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .fun-facts h2 {
+        font-size: 1.2rem;
+    }
+
+    .fun-facts p {
+        font-size: 0.9rem;
+    }
+
+    .menu-toggle {
+        width: 25px;
+        height: 18px;
+    }
+
+    .menu-toggle span {
+        height: 3px;
+    }
+
+    .dropdown-menu {
+        padding: 8px;
+    }
+
+    /* Ajustement de la section Links pour mobile */
+    .social-links a {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+}
+
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -47,6 +90,7 @@ img {
     z-index: 10;
     padding: 0;
 }
+
 #intro::after {
     content: "|";
     animation: blink 0.7s infinite step-start;
@@ -57,6 +101,8 @@ img {
     50% {
         opacity: 0;
     }
+}
+
 .parallax {
     background-image: url("{% static 'images/background.jpg' %}");
     height: 500px;
@@ -65,6 +111,7 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .fun-facts {
     background-color: #000000;
     font-family: 'Courier New', Courier, monospace;
@@ -88,6 +135,7 @@ img {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
 }
+
 .articles-section {
     background-color: #292929;
     color: #ffffff;
@@ -119,6 +167,7 @@ img {
 .articles-section .btn-secondary:hover {
     background-color: #f57c00;
 }
+
 /* CSS pour styliser les icônes */
 .footer {
     background-color: #333;
@@ -148,6 +197,7 @@ img {
 .social-links a:hover {
     color: #fff; /* Change la couleur des icônes au survol */
 }
+
 /* Styles pour la section "Posts" */
 .card {
     border: none;
@@ -187,16 +237,15 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 @media (max-width: 768px) {
     .intro-text, .container {
         width: 90%; /* Réduire la largeur pour les petits écrans */
         font-size: 1rem; /* Ajuster la taille de la police */
     }
+
     img {
         width: 100%; /* Assurez-vous que les images ne débordent pas */
         height: auto; /* Conserver les proportions des images */
     }
 }
-
-
-
