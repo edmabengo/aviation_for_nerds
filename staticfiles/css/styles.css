@@ -24,6 +24,7 @@ img {
     display: block;
 }
 
+/* Rendre les textes plus petits sur mobile */
 .intro-text h2 {
     font-size: 1.8rem;
     padding: 15px;
@@ -35,15 +36,30 @@ img {
     }
 
     .intro-text h2 {
-        font-size: 1.4rem; /* Ajustement de la taille du texte sur mobile */
+        font-size: 1.2rem; /* Smaller font size for mobile */
+        padding: 10px;     /* Reduced padding */
+        line-height: 1.4;  /* Better spacing between lines */
     }
 
     .fun-facts h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;    /* Adjust the heading size */
+    }
+
+    .fun-facts {
+        width: 90%;          /* Make the container more flexible */
+        font-size: 1rem;      /* Reduce the font size */
+        padding: 10px;        /* Reduced padding */
+        margin-top: 10px;     /* Adjust margin for spacing */
     }
 
     .fun-facts p {
-        font-size: 0.9rem;
+        font-size: 1rem;      /* Adjust the text size */
+    }
+
+    .lab-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;    /* Ensure the image scales correctly */
     }
 
     .menu-toggle {
@@ -64,12 +80,6 @@ img {
         font-size: 20px;
         margin: 0 5px;
     }
-
-    /* Désactivation de l'effet parallax sur mobile */
-    .parallax {
-        background-attachment: scroll;
-        min-height: 300px; /* Ajustement de la hauteur */
-    }
 }
 
 .card {
@@ -85,8 +95,8 @@ img {
 .intro-text {
     position: absolute;
     top: 60px;
-    left: 5%;
-    right: 5%;
+    left: 150px;
+    right: 200px;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
@@ -173,6 +183,7 @@ img {
     background-color: #f57c00;
 }
 
+/* CSS pour styliser les icônes */
 .footer {
     background-color: #333;
     color: #fff;
@@ -195,13 +206,14 @@ img {
     color: #ff9800;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 24px;
+    font-size: 24px; /* Taille des icônes */
 }
 
 .social-links a:hover {
-    color: #fff;
+    color: #fff; /* Change la couleur des icônes au survol */
 }
 
+/* Styles pour la section "Posts" */
 .card {
     border: none;
     border-radius: 10px;
@@ -243,12 +255,12 @@ img {
 
 @media (max-width: 768px) {
     .intro-text, .container {
-        width: 90%;
-        font-size: 1rem;
+        width: 90%; /* Réduire la largeur pour les petits écrans */
+        font-size: 1rem; /* Ajuster la taille de la police */
     }
 
     img {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Assurez-vous que les images ne débordent pas */
+        height: auto; /* Conserver les proportions des images */
     }
 }

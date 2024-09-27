@@ -153,14 +153,22 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Adjustments */
+        /* Additional Mobile Styles */
         @media (max-width: 768px) {
             .aviation-title {
                 font-size: 2rem;
             }
 
+            .intro-text h2 {
+                font-size: 1.2rem; /* Smaller font size for mobile */
+                padding: 10px;
+                line-height: 1.4;
+            }
+
             .fun-facts {
-                top: 70%; /* Adjusted for better fit on small screens */
+                top: 70%;
+                width: 90%; /* Adjust container width */
+                font-size: 1rem;
                 padding: 10px;
             }
 
@@ -176,10 +184,6 @@
             .footer {
                 padding: 10px;
                 font-size: 0.8rem;
-            }
-
-            .image-fullscreen {
-                max-height: 60vh; /* Ensure image fits well on mobile */
             }
         }
     </style>
@@ -203,7 +207,7 @@
     </ul>
 
     <div style="position: relative;">
-        <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="A large aviation image" class="image-fullscreen">
+        <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="large" class="image-fullscreen">
         <div class="intro-text">
             <h2 id="intro"></h2>
         </div>
@@ -289,5 +293,4 @@
         </div>
     </footer>
 </body>
-
 </html>
