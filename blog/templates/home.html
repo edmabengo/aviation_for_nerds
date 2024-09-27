@@ -152,31 +152,36 @@
             margin-top: 10px;
             font-size: 0.9rem;
         }
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
-    .aviation-title {
-        font-size: 2rem;
-    }
+            .aviation-title {
+                font-size: 2rem;
+            }
 
-    .fun-facts {
-        top: 70%;
-        padding: 10px;
-    }
+            .fun-facts {
+                top: 70%; /* Adjusted for better fit on small screens */
+                padding: 10px;
+            }
 
-    .menu-toggle {
-        top: 10px;
-        right: 10px;
-    }
+            .menu-toggle {
+                top: 10px;
+                right: 10px;
+            }
 
-    .dropdown-menu {
-        right: 10px;
-    }
+            .dropdown-menu {
+                right: 10px;
+            }
 
-    .footer {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-}
+            .footer {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
 
+            .image-fullscreen {
+                max-height: 60vh; /* Ensure image fits well on mobile */
+            }
+        }
     </style>
 </head>
 
@@ -198,7 +203,7 @@
     </ul>
 
     <div style="position: relative;">
-        <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="large" class="image-fullscreen">
+        <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="A large aviation image" class="image-fullscreen">
         <div class="intro-text">
             <h2 id="intro"></h2>
         </div>
@@ -284,4 +289,5 @@
         </div>
     </footer>
 </body>
+
 </html>
