@@ -2,16 +2,14 @@ body {
     background-color: #cccccc;
     color: #333;
     font-family: 'Arial', sans-serif;
-    background-image: url("{% static 'images/background.jpg' %}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 img {
     width: 100%;
     height: auto;
-    max-width: 100%;
     object-fit: cover;
     display: block;
 }
@@ -20,72 +18,14 @@ img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    max-width: 100%;
     display: block;
-}
-
-/* Rendre les textes plus petits sur mobile */
-.intro-text h2 {
-    font-size: 1.8rem;
-    padding: 15px;
-}
-
-@media (max-width: 768px) {
-    .aviation-title {
-        font-size: 2rem;
-    }
-
-    .intro-text h2 {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-        padding: 10px;     /* Reduced padding */
-        line-height: 1.4;  /* Better spacing between lines */
-    }
-
-    .fun-facts h2 {
-        font-size: 1.4rem;    /* Adjust the heading size */
-    }
-
-    .fun-facts {
-        width: 90%;          /* Make the container more flexible */
-        font-size: 1rem;      /* Reduce the font size */
-        padding: 10px;        /* Reduced padding */
-        margin-top: 10px;     /* Adjust margin for spacing */
-    }
-
-    .fun-facts p {
-        font-size: 1rem;      /* Adjust the text size */
-    }
-
-    .lab-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;    /* Ensure the image scales correctly */
-    }
-
-    .menu-toggle {
-        width: 25px;
-        height: 18px;
-    }
-
-    .menu-toggle span {
-        height: 3px;
-    }
-
-    .dropdown-menu {
-        padding: 8px;
-    }
-
-    /* Ajustement de la section Links pour mobile */
-    .social-links a {
-        font-size: 20px;
-        margin: 0 5px;
-    }
 }
 
 .card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
 }
 
 .container {
@@ -95,8 +35,8 @@ img {
 .intro-text {
     position: absolute;
     top: 60px;
-    left: 150px;
-    right: 200px;
+    left: 10px;
+    right: 10px;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
@@ -104,6 +44,22 @@ img {
     font-weight: bold;
     z-index: 10;
     padding: 0;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+    .intro-text {
+        top: 20px;
+        font-size: 1.2rem;
+        text-align: center;
+        white-space: normal;
+        overflow-x: auto;
+    }
+
+    /* Masquer "Fun Facts" sur mobile */
+    .fun-facts {
+        display: none;
+    }
 }
 
 #intro::after {
@@ -119,148 +75,62 @@ img {
 }
 
 .parallax {
-    background-image: url("{% static 'images/background.jpg' %}");
-    height: 500px;
-    background-attachment: fixed;
+    background-image: url('../images/background.jpg');
+    height: 400px;
+    background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.fun-facts {
-    background-color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: 20px;
+.fun-facts h2, .articles-section h2 {
+    font-size: 1.5rem;
 }
 
-.fun-facts h2 {
-    color: #ffffff;
-    background-color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.fun-facts p, .articles-section p {
+    font-size: 1rem;
 }
 
-.fun-facts p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+@media (max-width: 768px) {
+    .fun-facts, .articles-section {
+        padding: 10px;
+    }
+    .fun-facts h2, .articles-section h2 {
+        font-size: 1.2rem;
+    }
+    .fun-facts p, .articles-section p {
+        font-size: 0.9rem;
+    }
 }
 
-.articles-section {
-    background-color: #292929;
-    color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.articles-section h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-}
-
-.articles-section p {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-}
-
-.articles-section .btn-secondary {
-    background-color: #ff9800;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.articles-section .btn-secondary:hover {
-    background-color: #f57c00;
-}
-
-/* CSS pour styliser les icônes */
 .footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer h4 {
-    margin-bottom: 10px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.footer p {
-    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
 .social-links a {
-    color: #ff9800;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 24px; /* Taille des icônes */
-}
-
-.social-links a:hover {
-    color: #fff; /* Change la couleur des icônes au survol */
-}
-
-/* Styles pour la section "Posts" */
-.card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-title {
-    font-family: 'Courier New', Courier, monospace;
-    color: #333;
-}
-
-.card-text {
-    font-family: 'Arial', sans-serif;
-    color: #555;
-}
-
-.btn-primary {
-    background-color: #ff9800;
-    border: none;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.btn-primary:hover {
-    background-color: #e67e22;
-}
-
-.container h1 {
-    font-family: 'Courier New', Courier, monospace;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 20px;
 }
 
 @media (max-width: 768px) {
-    .intro-text, .container {
-        width: 90%; /* Réduire la largeur pour les petits écrans */
-        font-size: 1rem; /* Ajuster la taille de la police */
+    .social-links a {
+        font-size: 18px;
+        margin: 0 5px;
     }
+}
 
-    img {
-        width: 100%; /* Assurez-vous que les images ne débordent pas */
-        height: auto; /* Conserver les proportions des images */
+h1.text-center.my-4 {
+    font-size: 2.5em;
+}
+
+@media (max-width: 768px) {
+    h1.text-center.my-4 {
+        font-size: 2em;
     }
+}
+
+.animate-slide {
+    animation: slideIn 1s ease-out forwards;
 }

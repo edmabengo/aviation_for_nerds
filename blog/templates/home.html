@@ -153,6 +153,14 @@
             font-size: 0.9rem;
         }
 
+        .image-fullscreen {
+            width: 100%;
+            height: auto;
+            max-height: 200vh;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Additional Mobile Styles */
         @media (max-width: 768px) {
             .aviation-title {
@@ -160,9 +168,13 @@
             }
 
             .intro-text h2 {
+                text-align: center;
                 font-size: 1.2rem; /* Smaller font size for mobile */
                 padding: 10px;
                 line-height: 1.4;
+                width: 100%; /* Ensures it takes full width */
+
+
             }
 
             .fun-facts {
@@ -208,14 +220,16 @@
 
     <div style="position: relative;">
         <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="large" class="image-fullscreen">
-        <div class="intro-text">
-            <h2 id="intro"></h2>
-        </div>
+        <div class="main-container">
+            <div class="intro-text">
+                <h2 id="intro"></h2>
+            </div>
 
-        <!-- Section "Did You Know?" -->
-        <div class="fun-facts">
-            <h2 class="text-center">Did you know?</h2>
-            <p id="fact" class="text-center"></p>
+            <!-- Section "Did You Know?" -->
+            <div class="fun-facts">
+                <h2 class="text-center">Did you know?</h2>
+                <p id="fact" class="text-center"></p>
+            </div>
         </div>
     </div>
 
@@ -229,7 +243,7 @@
             ];
             let i = 0;
             let textIndex = 0;
-            const speed = 40;
+            const speed = 50;
             const eraseSpeed = 20;
             const delayBetweenTexts = 1000;
 
@@ -255,6 +269,7 @@
                     setTimeout(typeWriter, speed);
                 }
             }
+
 
             typeWriter();
 
@@ -294,3 +309,4 @@
     </footer>
 </body>
 </html>
+

@@ -85,9 +85,9 @@
             align-items: center;
             justify-content: center;
             height: 75vh;
-            background: url('{% static "images/southintro.JPEG" %}') no-repeat center fixed;
+            background: url('{% static "images/southintro.JPEG" %}') no-repeat center center;
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: scroll; /* Désactiver l'effet fixed sur mobile */
         }
 
         .content-section {
@@ -106,11 +106,45 @@
             margin-bottom: 15px;
         }
 
+        .intro-paragraph {
+    background-color: #f0f0f0; /* Fond léger pour le démarquer */
+    padding: 15px; /* Ajoute de l'espace autour du texte */
+    border-left: 4px solid #ff9800; /* Ajoute une bordure gauche colorée pour accentuer */
+    border-right: 4px solid #ff9800;
+    margin-bottom: 20px; /* Espace en bas pour le séparer du reste */
+    
+    line-height: 1.8; /* Espace entre les lignes pour une meilleure lisibilité */
+}
+
+
         footer {
             padding: 10px 0;
             text-align: center;
             font-family: 'Courier New', monospace;
             color: #333;
+        }
+
+        /* Ajustements pour mobile */
+        @media (max-width: 768px) {
+            .intro-section {
+                height: 50vh; /* Réduire la hauteur sur mobile */
+                background-position: center;
+                background-size: cover;
+            }
+
+            .menu-toggle {
+                top: 10px;
+                right: 10px;
+            }
+
+            .dropdown-menu {
+                right: 10px;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -136,7 +170,7 @@
 
     <!-- Content Section with Intro Text and Project Descriptions -->
     <section class="content-section">
-        <p>Hi there, I am an Industrial Engineering Student focusing on Aviation and Aerospace in general. I am passionate about the science behind flight and try to apply scientific principles to solve problems. In short, the basic ideas are: How do we optimize the current aviation ecosystem to make it better both environmentally and in terms of safety. Currently, I am:</p>
+        <p class="intro-paragraph">Hi there, I am an Industrial Engineering Student focusing on Aviation and Aerospace in general. I am passionate about the science behind flight and try to apply scientific principles to solve problems. In short, the basic ideas are: How do we optimize the current aviation ecosystem to make it better both environmentally and in terms of safety. Currently, I am:</p>
         <p><strong>Exploring Sustainable Aviation Fuels (SAF)</strong> - Exploring SAF and their impact on reducing carbon emissions and enhancing efficiency. I am investigating various SAF production technologies using machine learning techniques to predict the properties of future SAFs, aiming to create more sustainable, high-performance fuels for the next generation of aviation. If you would like to learn more about the topic, please feel free to reach out :)</p>
         <p><strong>Aviation Growth in Africa</strong> - Another exciting project I'm involved in focuses on supporting aviation growth in Africa, particularly in the DRC and South Africa. Together with some young African pilots and aviation enthusiasts, we are building a platform that provides other young aviation enthusiasts with access to essential tools and resources. This initiative includes forming partnerships with foreign and local NGOs and philanthropic actors to support a better environment for aspiring young aviators in the region.</p>
     </section>
