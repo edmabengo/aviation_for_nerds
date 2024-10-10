@@ -155,21 +155,34 @@
 
         .image-fullscreen {
             width: 100%;
-            height: auto;
-            max-height: 200vh;
+            height: 100vh;
             object-fit: cover;
             display: block;
         }
 
         /* Additional Mobile Styles */
         @media (max-width: 768px) {
+
+
+            .image-fullscreen {
+                height: calc(100vh - 60px); /* Ajuste la hauteur en fonction de l'encombrement du header et du padding */
+            }
+
+            .footer {
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
             .aviation-title {
                 font-size: 2rem;
             }
 
+
+
             .intro-text h2 {
                 text-align: center;
-                font-size: 1.2rem; /* Smaller font size for mobile */
+                font-size: 2.0rem; /* Smaller font size for mobile */
+                font-weight: 600;
                 padding: 10px;
                 line-height: 1.4;
                 width: 100%; /* Ensures it takes full width */
@@ -220,7 +233,7 @@
 
     <div style="position: relative;">
         <img src="{% static 'images/simon-fitall-drBUfUTOX5M-unsplash.jpg' %}" alt="large" class="image-fullscreen">
-        <div class="main-container">
+
             <div class="intro-text">
                 <h2 id="intro"></h2>
             </div>

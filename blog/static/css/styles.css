@@ -38,7 +38,7 @@ img {
     left: 20px;
     right: 10px;
     color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', monospace;
     font-size: 0.5rem;
     text-align: left;
     font-weight: 900;
@@ -49,10 +49,10 @@ img {
 /* Ajustement pour mobile */
 @media (max-width: 768px) {
     .intro-text {
-        top: 20px;
-        font-size: 3.2rem;
-        font-family: 'Courier New', Courier, monospace; /* Changement de police pour mobile */
-        font-weight: 700; /* Utilisation de weight 700 au lieu de bold */
+        top: 80px;
+        font-size: 2.5rem;
+        font-family: 'Courier New', monospace; /* Changement de police pour mobile */
+        font-weight: 900; /* Utilisation de weight 700 au lieu de bold */
         text-align: center;
         white-space: normal;
         overflow-x: auto;
