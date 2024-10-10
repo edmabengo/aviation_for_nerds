@@ -35,13 +35,13 @@ img {
 .intro-text {
     position: absolute;
     top: 60px;
-    left: 10px;
+    left: 20px;
     right: 10px;
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5rem;
+    font-size: 0.5rem;
     text-align: left;
-    font-weight: bold;
+    font-weight: 900;
     z-index: 10;
     padding: 0;
 }
@@ -50,7 +50,9 @@ img {
 @media (max-width: 768px) {
     .intro-text {
         top: 20px;
-        font-size: 1.2rem;
+        font-size: 3.2rem;
+        font-family: 'Courier New', Courier, monospace; /* Changement de police pour mobile */
+        font-weight: 700; /* Utilisation de weight 700 au lieu de bold */
         text-align: center;
         white-space: normal;
         overflow-x: auto;
@@ -58,7 +60,15 @@ img {
 
     /* Masquer "Fun Facts" sur mobile */
     .fun-facts {
-        display: none;
+        display: block; /* Rendre la section visible */
+        position: relative;
+        top: auto; /* Ajuste la position pour qu'elle ne chevauche pas l'image */
+        width: 90%; /* Réduire la largeur pour un meilleur rendu sur mobile */
+        margin: 20px auto;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.6); /* Ajouter un fond pour améliorer la lisibilité */
+        color: #fff;
+        border-radius: 8px;
     }
 }
 
