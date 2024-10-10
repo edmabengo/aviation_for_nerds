@@ -257,9 +257,17 @@
             ];
             let i = 0;
             let textIndex = 0;
-            const speed = 50;
-            const eraseSpeed = 20;
-            const delayBetweenTexts = 1000;
+            let speed, eraseSpeed, delayBetweenTexts;
+            if (window.innerWidth <= 768) {
+               speed = 80;
+               eraseSpeed = 30;
+               delayBetweenTexts = 1500;
+            }
+            else {
+               speed = 80;
+               eraseSpeed = 30;
+               delayBetweenTexts = 1000;
+            }
 
             function typeWriter() {
                 if (i < texts[textIndex].length) {

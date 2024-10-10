@@ -182,7 +182,7 @@
             .intro-text h2 {
                 text-align: center;
                 font-size: 2.0rem; /* Smaller font size for mobile */
-                font-weight: 600;
+                font_weight: 600;
                 padding: 10px;
                 line-height: 1.4;
                 width: 100%; /* Ensures it takes full width */
@@ -257,9 +257,17 @@
             ];
             let i = 0;
             let textIndex = 0;
-            const speed = 50;
-            const eraseSpeed = 20;
-            const delayBetweenTexts = 1000;
+            let speed, eraseSpeed, delayBetweenTexts;
+            if (window.innerWidth <= 768) {
+               speed = 100;
+               eraseSpeed = 80;
+               delayBetweenTexts = 1500;
+            }
+            else {
+               speed = 50;
+               eraseSpeed = 50;
+               delayBetweenTexts = 1000;
+            }
 
             function typeWriter() {
                 if (i < texts[textIndex].length) {
