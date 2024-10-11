@@ -6,6 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviation for Nerds - Blog</title>
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W53HTDS68G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W53HTDS68G');
+    </script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -212,6 +221,9 @@
             }
         }
     </style>
+
+
+
 </head>
 
 <body>
@@ -259,13 +271,13 @@
             let textIndex = 0;
             let speed, eraseSpeed, delayBetweenTexts;
             if (window.innerWidth <= 768) {
-               speed = 80;
-               eraseSpeed = 30;
+               speed = 100;
+               eraseSpeed = 80;
                delayBetweenTexts = 1500;
             }
             else {
-               speed = 80;
-               eraseSpeed = 30;
+               speed = 50;
+               eraseSpeed = 50;
                delayBetweenTexts = 1000;
             }
 
