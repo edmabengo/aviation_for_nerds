@@ -10,16 +10,28 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>{{ post.title }}</h1>
+        <h1 class="text-center">{{ post.title }}</h1>
 
-        <!-- Utilisation de l'image dans static/images -->
-        <img src="{% static 'images/andrew-ruiz--ajZ_Xzeqe4-unsplash.jpg' %}" alt="{{ post.title }}" class="img-fluid">
+        <!-- Affiche l'image associée à l'article -->
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-4">
+        {% endif %}
 
-        <p>{{ post.content }}</p>
-        <p><em>Written by {{ post.author }} on {{ post.created_at }}</em></p>
+        <!-- Affiche le contenu de l'article avec le filtre safe pour interpréter le HTML -->
+        <div class="post-content">
+            {{ post.content|safe }}
+        </div>
+
+        <p class="text-muted mt-4"><em>Written by {{ post.author }} on {{ post.created_at|date:"F j, Y" }}</em></p>
         <a href="{% url 'posts_list' %}" class="btn btn-secondary mt-3">Back to Posts</a>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <p>Inspired by Great Expectations :)</p>
+            <p>Edgar 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
-
-

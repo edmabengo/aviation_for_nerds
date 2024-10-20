@@ -157,7 +157,7 @@
                         <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                            <p class="card-text">{{ post.content|truncatewords:25|safe }}</p>
                             {% if post.is_published %}
                                 <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
                             {% else %}
