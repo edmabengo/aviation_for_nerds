@@ -54,7 +54,7 @@ ALLOWED_HOSTS = [
 ]
 
 # Security settings for HTTPS and secure cookies
-SECURE_SSL_REDIRECT = False  # Redirige toutes les requêtes HTTP vers HTTPS
+SECURE_SSL_REDIRECT = True  # Redirige toutes les requêtes HTTP vers HTTPS
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') # Reconnaît les requêtes HTTPS via le proxy (Heroku)
 SESSION_COOKIE_SECURE = True  # Utilise des cookies sécurisés
 CSRF_COOKIE_SECURE = True  # Protection CSRF sécurisée
