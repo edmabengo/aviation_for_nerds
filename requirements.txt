@@ -12,3 +12,4 @@ gunicorn==20.1.0  # Ajoutez gunicorn pour servir l'application
 Django==5.1  # Ajoutez Django ici
 psycopg2-binary==2.9.6  # Requis pour PostgreSQL sur Heroku
 django-ckeditor==6.4.2  # Ajoutez CKEditor ici
+Pillow==11.0.0
