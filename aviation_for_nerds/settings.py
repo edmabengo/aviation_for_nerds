@@ -47,12 +47,8 @@ LOGGING = {
     },
 }
 
-ALLOWED_HOSTS = [
-    'aviation-for-nerds-67628ee4638b.herokuapp.com',
-    'localhost',
-    '127.0.0.1',
-    'www.aviationfornerds.com',
-    'aviationfornerds.com'
+ALLOWED_HOSTS = ['www.aviationfornerds.com', 'aviationfornerds.com', 'your-username.pythonanywhere.com']
+
 ]
 
 # Security settings for HTTPS and secure cookies
